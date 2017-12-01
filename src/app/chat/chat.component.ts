@@ -6,8 +6,12 @@ import {SystemMessage} from './model/system-message.model';
 
 /**
  * > Show Messages in the Chat:
- *    Use the field 'this.messages'. Every message you push into the array will be displayed within the chat-panel:
+ *    Use the field 'this.messages'. Every message you push onto the array will be displayed within the chat panel:
  *    this.messages.push(new Message(...));
+ *
+ * > Input from the Chat-List:
+ *    Read the fields 'this.userName' and 'this.
+ *
  */
 @Component({
   selector: 'app-chat',
@@ -24,16 +28,18 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   private messages: Message[] = [];
 
-  userName = 'User number' + Math.floor(Math.random() * 100);
-  roomName = 'Our first Chatroom';
+  private userName: string;
+  private roomName: string;
 
-  constructor() { }
+  constructor(private socketService: SocketService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.userName = this.route.snapshot.paramMap.get('userName');
+    this.roomName = this.route.snapshot.paramMap.get('roomName');
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // TODO: INSERT IMPLEMENTATION HERE: Create Websocket Connection!
+    // TODO: INSERT IMPLEMENTATION HERE (Make the SocketService work)
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   }
