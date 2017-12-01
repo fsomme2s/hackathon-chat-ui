@@ -1,0 +1,17 @@
+<div class="chat-list">
+  <div class="header">
+    <input class="username-input" placeholder="username" #userNameInput>
+
+    <div class="add-room">
+      <input class="chat-name-input" placeholder="chatroom name" (keydown.enter)="addRoomBtn.click()" #roomNameInput>
+      <button (click)="openRoom()" class="add-btn" #addRoomBtn>Add</button>
+    </div>
+
+    <h2>Hack-Chats:</h2>
+  </div>
+
+  <div class="chat-room" *ngFor="let roomName of roomNames">
+    <h3><a (click)="openRoom(roomName)">Chatroom #{{roomName}}</a></h3>
+  </div>
+
+</div>

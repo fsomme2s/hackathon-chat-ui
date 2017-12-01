@@ -1,0 +1,12 @@
+@import "_common/colors";
+.app {
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input, button {
+  border: 1px solid $gray;
+  border-radius: 3px;
+}
+

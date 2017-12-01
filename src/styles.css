@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  width: 100%;
+  max-width: 1028px;
+  min-width: 375px;
+  overflow-y: hidden;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Consolas,monaco,monospace;
+}
+
+input, button {
+  font-family: Consolas,monaco,monospace;
+}

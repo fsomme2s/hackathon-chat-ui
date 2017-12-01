@@ -1,0 +1,23 @@
+<div class="chat">
+  <div class="header">
+    <button [routerLink]="['']">Back</button>
+    <h2>#{{roomName}}:</h2>
+    <span class="username">(Writing as "{{userName}}")</span>
+  </div>
+
+  <div class="body" #chatBody>
+    <div class="message" [class.own]="msg.own" *ngFor="let msg of messages">
+      <div class="meta" *ngIf="hasMeta(msg)">
+        <div class="from" *ngIf="! msg.own">{{msg.from}}:</div>
+        <div class="time">{{msg.getTimeFormatted()}}</div>
+      </div>
+      <div>{{msg.content}}</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <input class="msg-input" (keydown.enter)="sendBtn.click()" #chatMsg>
+    <button class="send-btn" (click)="sendMessage(chatMsg.value)" #sendBtn>Send!</button>
+  </div>
+</div>
